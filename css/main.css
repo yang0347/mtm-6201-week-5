@@ -35,3 +35,150 @@
 	background-color: #e89380;
 	/*purple*/
 }
+
+/*  ******************************** */
+
+
+.transition .b1{
+    transition: width 1000ms ease-in-out;
+}
+
+.transition .b1:hover{
+    width: 400px;
+    height: 150px;
+}
+
+.transition .b2{
+    transition: width 1000ms, height 500ms;
+    transition-timing-function: ease-out;
+    transition-delay:  .5s;
+}
+
+.transition .b2:hover{
+    width: 250px;
+    height: 250px;
+}
+
+.transition .b3{
+    transition: transform 1s cubic-bezier(.61,-0.65,.34,1.47) 0.5s;
+}
+
+.transition .b3:hover{
+    transform: rotate(80deg);
+}
+
+.transition .b4{
+    transition: all 1s ease-in;
+}
+
+.transition .b4:hover{
+    background-color: #cc80cc;
+    border-radius: 30px;
+}
+/*     *********************** 
+           transform
+***************************** */
+
+.transform .box{
+    transition: transform 1s;
+}
+.transform .b1:hover{
+    transform: translate(20px, 30px);
+}
+
+.transform .b2:hover{
+    /*transform: scale(1.2); */
+    transform: scale(1.2, 1.6);
+}
+
+
+/* .transform .b3:hover{
+    transform: rotate(45deg);
+    transform-origin: right;
+} */
+
+.transform .b3{
+    transform-origin: right top;
+}
+.transform .b3:hover{
+    transform: rotate(45deg);
+}
+
+/* .transform .b4:hover{
+    transform: skewX(5deg);
+} */
+
+/* .transform .b4:hover{
+    transform: skewX(5deg) skewY(30deg);
+} */
+
+.transform .b4{
+    transform: skewX(5deg) skewY(30deg);
+}
+
+.transform .b4:hover{
+    transform: skewX(0) skewY(0);
+}
+
+/*  ******************************** 
+             animation 
+******************************** */
+
+@keyframes changecolor{
+    from {background-color: #cc80cc;}
+    to{ background-color: #E89380;}
+
+}
+
+.animation .b1{
+    animation-name: changecolor;
+    animation-duration:2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes movearound{
+    0%{
+        transform: translate(0,0);
+    }
+
+    25%{
+        transform: translate(200px,0);
+    }
+
+    50%{transform: translate(200px,200px);}
+
+    75%{transform: translate(0,200px);}
+
+    100%{transform: translate(0,0);}
+}
+
+.animation .b2{
+    animation-name: movearound;
+    animation-duration: 4s;
+    animation-iteration-count: 3;
+    animation-delay: 2s;
+    animation-duration: alternate;
+}
+
+
+@keyframes transformme{
+    0%{
+        transform: scale(.5) rotateX(0) translateX(0);
+    }
+
+    100%{
+        transform: scale(1) rotateX(180deg) translateX(600px);
+    }
+}
+
+.animation .b3{
+    animation: transformme 1.5s 3 alternate forwards ease-in-out; 
+}
+
+.animation .b4{
+    animation: transformme 1.5s 3s infinite alternate forwards cubic-bezier(.61,-0.65,.34,1.47);
+}
+
+.animation .b4:hover{
+    animation-play-state: paused;
+}
